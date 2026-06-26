@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Написать в WhatsApp</title>
+  <title>WhatsApp</title>
 
   <style>
     body {
@@ -25,7 +25,7 @@
       font-size: 42px;
       font-weight: 800;
       color: #25D366;
-      margin: 25px 0 18px;
+      margin: 25px 0 16px;
       line-height: 1.15;
     }
 
@@ -36,17 +36,11 @@
       margin-bottom: 22px;
     }
 
-    .language-title {
-      font-size: 24px;
-      font-weight: 800;
-      margin: 18px 0 16px;
-    }
-
     .language-buttons {
       display: flex;
       gap: 12px;
       justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .lang-button {
@@ -68,9 +62,9 @@
     }
 
     .topic-title {
-      font-size: 28px;
+      font-size: 30px;
       font-weight: 800;
-      margin: 26px 0 18px;
+      margin: 22px 0 20px;
       line-height: 1.25;
     }
 
@@ -81,65 +75,30 @@
       margin: 14px auto;
       background: #25D366;
       color: white;
-      font-size: 25px;
+      font-size: 26px;
       font-weight: 800;
       text-decoration: none;
-      padding: 22px 16px;
-      border-radius: 20px;
+      padding: 24px 16px;
+      border-radius: 22px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.15);
       border: none;
       cursor: pointer;
     }
 
-    .topic-button.secondary {
+    .topic-button.dark {
       background: #128C7E;
     }
 
-    .copy-button {
-      display: block;
-      max-width: 460px;
-      margin: 26px auto 18px;
-      background: white;
-      color: #25D366;
-      border: 3px solid #25D366;
-      font-size: 24px;
-      font-weight: 800;
-      padding: 22px 18px;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
     .phone {
-      font-size: 34px;
+      font-size: 32px;
       font-weight: 800;
-      margin: 28px 0;
-    }
-
-    .card {
-      background: white;
-      border-radius: 22px;
-      padding: 28px 24px;
-      text-align: left;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.08);
-      margin-top: 24px;
-    }
-
-    h1 {
-      font-size: 30px;
-      line-height: 1.2;
-      margin: 0 0 20px;
-    }
-
-    p {
-      font-size: 21px;
-      line-height: 1.45;
-      margin: 14px 0;
+      margin: 32px 0 10px;
     }
 
     .small {
       font-size: 17px;
       color: #777;
-      margin-top: 25px;
+      margin-top: 18px;
       line-height: 1.5;
     }
   </style>
@@ -151,7 +110,7 @@
     <div class="title">WhatsApp</div>
 
     <div class="subtitle" id="subtitle">
-      Тілді таңдаңыз және тақырыпты басыңыз
+      Тілді таңдаңыз
     </div>
 
     <div class="language-buttons">
@@ -172,7 +131,7 @@
       Арест бойынша
     </button>
 
-    <button class="topic-button secondary" onclick="openWhatsApp('accountArrest')" id="btnAccountArrest">
+    <button class="topic-button dark" onclick="openWhatsApp('accountArrest')" id="btnAccountArrest">
       Шот аресті бойынша
     </button>
 
@@ -180,15 +139,15 @@
       Автокредит бойынша
     </button>
 
-    <button class="topic-button secondary" onclick="openWhatsApp('paymentSchedule')" id="btnPaymentSchedule">
-      Төлем графигі бойынша
+    <button class="topic-button dark" onclick="openWhatsApp('schedule')" id="btnSchedule">
+      График бойынша
     </button>
 
     <button class="topic-button" onclick="openWhatsApp('fiveYearSchedule')" id="btnFiveYearSchedule">
       5 жылға график бойынша
     </button>
 
-    <button class="topic-button secondary" onclick="openWhatsApp('bankruptcy')" id="btnBankruptcy">
+    <button class="topic-button dark" onclick="openWhatsApp('bankruptcy')" id="btnBankruptcy">
       Банкроттық бойынша
     </button>
 
@@ -196,27 +155,10 @@
       Соттық банкроттық бойынша
     </button>
 
-    <button class="copy-button" id="copyPhoneButton" onclick="copyPhone()">
-      Нөмірді көшіру
-    </button>
-
     <div class="phone">+7 778 113 59 62</div>
 
-    <div class="card">
-      <h1 id="instructionTitle">Егер WhatsApp ашылмаса:</h1>
-
-      <div id="instructionText">
-        <p>✅ Жоғарыдағы үш нүктені басыңыз.</p>
-        <p>✅ «Открыть в браузере» дегенді таңдаңыз.</p>
-        <p>✅ Браузер ашылғаннан кейін тақырыпты қайта басыңыз.</p>
-        <p>✅ WhatsApp беті ашылса — «Открыть приложение» немесе «Продолжить в чате» басыңыз.</p>
-        <p>✅ Егер бәрібір ашылмаса — нөмірді көшіріп, WhatsApp-қа қолмен жазыңыз.</p>
-      </div>
-    </div>
-
     <div class="small" id="smallText">
-      Егер WhatsApp ашылмаса, нөмірді қолмен сақтаңыз:<br>
-      +7 778 113 59 62
+      Тақырыпты таңдаңыз, WhatsApp ашылады
     </div>
 
   </div>
@@ -227,24 +169,14 @@
 
     const data = {
       kz: {
-        subtitle: "Тілді таңдаңыз және тақырыпты басыңыз",
+        subtitle: "Тілді таңдаңыз",
         topicTitle: "Қандай мәселе бойынша жазасыз?",
-        copyPhone: "Нөмірді көшіру",
-        copied: "Нөмір көшірілді",
-        instructionTitle: "Егер WhatsApp ашылмаса:",
-        instructionHtml: `
-          <p>✅ Жоғарыдағы үш нүктені басыңыз.</p>
-          <p>✅ «Открыть в браузере» дегенді таңдаңыз.</p>
-          <p>✅ Браузер ашылғаннан кейін тақырыпты қайта басыңыз.</p>
-          <p>✅ WhatsApp беті ашылса — «Открыть приложение» немесе «Продолжить в чате» басыңыз.</p>
-          <p>✅ Егер бәрібір ашылмаса — нөмірді көшіріп, WhatsApp-қа қолмен жазыңыз.</p>
-        `,
-        small: "Егер WhatsApp ашылмаса, нөмірді қолмен сақтаңыз:<br>+7 778 113 59 62",
+        smallText: "Тақырыпты таңдаңыз, WhatsApp ашылады",
         buttons: {
           arrest: "Арест бойынша",
           accountArrest: "Шот аресті бойынша",
           autocredit: "Автокредит бойынша",
-          paymentSchedule: "Төлем графигі бойынша",
+          schedule: "График бойынша",
           fiveYearSchedule: "5 жылға график бойынша",
           bankruptcy: "Банкроттық бойынша",
           courtBankruptcy: "Соттық банкроттық бойынша"
@@ -253,32 +185,22 @@
           arrest: "Сәлеметсіз бе, мен арест бойынша ақпарат алғым келеді",
           accountArrest: "Сәлеметсіз бе, мен шот аресті бойынша ақпарат алғым келеді",
           autocredit: "Сәлеметсіз бе, мен автокредит бойынша ақпарат алғым келеді",
-          paymentSchedule: "Сәлеметсіз бе, мен төлем графигі бойынша ақпарат алғым келеді",
-          fiveYearSchedule: "Сәлеметсіз бе, мен 5 жылға төлем графигі бойынша ақпарат алғым келеді",
+          schedule: "Сәлеметсіз бе, мен график бойынша ақпарат алғым келеді",
+          fiveYearSchedule: "Сәлеметсіз бе, мен 5 жылға график бойынша ақпарат алғым келеді",
           bankruptcy: "Сәлеметсіз бе, мен банкроттық бойынша ақпарат алғым келеді",
           courtBankruptcy: "Сәлеметсіз бе, мен соттық банкроттық бойынша ақпарат алғым келеді"
         }
       },
 
       ru: {
-        subtitle: "Выберите язык и нажмите нужную тему",
+        subtitle: "Выберите язык",
         topicTitle: "По какому вопросу вы пишете?",
-        copyPhone: "Скопировать номер",
-        copied: "Номер скопирован",
-        instructionTitle: "Если WhatsApp не открылся:",
-        instructionHtml: `
-          <p>✅ Нажмите на три точки сверху.</p>
-          <p>✅ Выберите «Открыть в браузере».</p>
-          <p>✅ После открытия в браузере снова нажмите нужную тему.</p>
-          <p>✅ Если открылась страница WhatsApp — нажмите «Открыть приложение» или «Продолжить в чате».</p>
-          <p>✅ Если всё равно не открылось — скопируйте номер и напишите вручную.</p>
-        `,
-        small: "Если WhatsApp не открылся, сохраните номер вручную:<br>+7 778 113 59 62",
+        smallText: "Выберите тему, откроется WhatsApp",
         buttons: {
           arrest: "Арест",
           accountArrest: "Арест счета",
           autocredit: "Автокредит",
-          paymentSchedule: "График платежей",
+          schedule: "График",
           fiveYearSchedule: "График на 5 лет",
           bankruptcy: "Банкротство",
           courtBankruptcy: "Судебное банкротство"
@@ -287,7 +209,7 @@
           arrest: "Здравствуйте, пишу по поводу арестов",
           accountArrest: "Здравствуйте, пишу по поводу ареста счета",
           autocredit: "Здравствуйте, пишу по поводу автокредита",
-          paymentSchedule: "Здравствуйте, пишу по поводу графика платежей",
+          schedule: "Здравствуйте, пишу по поводу графика",
           fiveYearSchedule: "Здравствуйте, пишу по поводу графика на 5 лет",
           bankruptcy: "Здравствуйте, пишу по поводу банкротства",
           courtBankruptcy: "Здравствуйте, пишу по поводу судебного банкротства"
@@ -301,19 +223,15 @@
 
       document.getElementById("subtitle").textContent = selected.subtitle;
       document.getElementById("topicTitle").textContent = selected.topicTitle;
+      document.getElementById("smallText").textContent = selected.smallText;
 
       document.getElementById("btnArrest").textContent = selected.buttons.arrest;
       document.getElementById("btnAccountArrest").textContent = selected.buttons.accountArrest;
       document.getElementById("btnAutocredit").textContent = selected.buttons.autocredit;
-      document.getElementById("btnPaymentSchedule").textContent = selected.buttons.paymentSchedule;
+      document.getElementById("btnSchedule").textContent = selected.buttons.schedule;
       document.getElementById("btnFiveYearSchedule").textContent = selected.buttons.fiveYearSchedule;
       document.getElementById("btnBankruptcy").textContent = selected.buttons.bankruptcy;
       document.getElementById("btnCourtBankruptcy").textContent = selected.buttons.courtBankruptcy;
-
-      document.getElementById("copyPhoneButton").textContent = selected.copyPhone;
-      document.getElementById("instructionTitle").textContent = selected.instructionTitle;
-      document.getElementById("instructionText").innerHTML = selected.instructionHtml;
-      document.getElementById("smallText").innerHTML = selected.small;
 
       document.getElementById("kzBtn").classList.remove("active");
       document.getElementById("ruBtn").classList.remove("active");
@@ -329,11 +247,6 @@
       const message = data[currentLanguage].messages[topic];
       const encodedMessage = encodeURIComponent(message);
       window.location.href = https://wa.me/${phone}?text=${encodedMessage};
-    }
-
-    function copyPhone() {
-      navigator.clipboard.writeText("+77781135962");
-      alert(data[currentLanguage].copied);
     }
 
     setLanguage("kz");
