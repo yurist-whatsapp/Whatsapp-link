@@ -22,49 +22,54 @@
     }
 
     .title {
-      font-size: 42px;
+      font-size: 44px;
       font-weight: 800;
       color: #25D366;
       margin: 25px 0 16px;
-      line-height: 1.15;
     }
 
     .subtitle {
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 800;
       line-height: 1.25;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .language-buttons {
       display: flex;
       gap: 12px;
       justify-content: center;
-      margin-bottom: 28px;
+      margin-bottom: 34px;
     }
 
     .lang-button {
       flex: 1;
-      max-width: 220px;
-      padding: 18px 10px;
-      border-radius: 18px;
+      max-width: 230px;
+      padding: 20px 10px;
+      border-radius: 20px;
       border: 3px solid #25D366;
       background: white;
       color: #25D366;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
-      cursor: pointer;
+      text-decoration: none;
+      display: block;
     }
 
-    .lang-button.active {
+    .lang-button.green {
       background: #25D366;
       color: white;
     }
 
-    .topic-title {
-      font-size: 30px;
+    .section {
+      margin-top: 35px;
+      padding-top: 10px;
+    }
+
+    .section-title {
+      font-size: 34px;
       font-weight: 800;
-      margin: 22px 0 20px;
+      margin: 20px 0 24px;
       line-height: 1.25;
     }
 
@@ -72,17 +77,16 @@
       display: block;
       width: 100%;
       max-width: 500px;
-      margin: 14px auto;
+      margin: 15px auto;
       background: #25D366;
       color: white;
-      font-size: 26px;
+      font-size: 28px;
       font-weight: 800;
       text-decoration: none;
-      padding: 24px 16px;
-      border-radius: 22px;
+      padding: 25px 16px;
+      border-radius: 24px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.15);
-      border: none;
-      cursor: pointer;
+      box-sizing: border-box;
     }
 
     .topic-button.dark {
@@ -90,13 +94,13 @@
     }
 
     .phone {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 800;
-      margin: 32px 0 10px;
+      margin: 36px 0 18px;
     }
 
     .small {
-      font-size: 17px;
+      font-size: 18px;
       color: #777;
       margin-top: 18px;
       line-height: 1.5;
@@ -109,147 +113,103 @@
 
     <div class="title">WhatsApp</div>
 
-    <div class="subtitle" id="subtitle">
-      Тілді таңдаңыз
+    <div class="subtitle">
+      Тілді таңдаңыз / Выберите язык
     </div>
 
     <div class="language-buttons">
-      <button class="lang-button active" id="kzBtn" onclick="setLanguage('kz')">
-        Қазақша
-      </button>
-
-      <button class="lang-button" id="ruBtn" onclick="setLanguage('ru')">
-        Русский
-      </button>
+      <a class="lang-button green" href="#kz">Қазақша</a>
+      <a class="lang-button" href="#ru">Русский</a>
     </div>
 
-    <div class="topic-title" id="topicTitle">
-      Қандай мәселе бойынша жазасыз?
+    <div id="kz" class="section">
+      <div class="section-title">
+        Қандай мәселе бойынша жазасыз?
+      </div>
+
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%B0%D1%80%D0%B5%D1%81%D1%82%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+        Арест бойынша
+      </a>
+
+      <a class="topic-button dark"
+         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D1%88%D0%BE%D1%82%20%D0%B0%D1%80%D0%B5%D1%81%D1%82%D1%96%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+        Шот аресті бойынша
+      </a>
+
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+        Автокредит бойынша
+      </a>
+
+      <a class="topic-button dark"
+         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+        График бойынша
+      </a>
+
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%205%20%D0%B6%D1%8B%D0%BB%D2%93%D0%B0%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+        5 жылға график бойынша
+      </a>
+
+      <a class="topic-button dark"
+         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%82%D1%8B%D2%9B%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+        Банкроттық бойынша
+      </a>
+
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D1%81%D0%BE%D1%82%D1%82%D1%8B%D2%9B%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%82%D1%8B%D2%9B%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
+        Соттық банкроттық бойынша
+      </a>
     </div>
 
-    <button class="topic-button" onclick="openWhatsApp('arrest')" id="btnArrest">
-      Арест бойынша
-    </button>
+    <div id="ru" class="section">
+      <div class="section-title">
+        По какому вопросу вы пишете?
+      </div>
 
-    <button class="topic-button dark" onclick="openWhatsApp('accountArrest')" id="btnAccountArrest">
-      Шот аресті бойынша
-    </button>
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B0%D1%80%D0%B5%D1%81%D1%82%D0%BE%D0%B2">
+        Арест
+      </a>
 
-    <button class="topic-button" onclick="openWhatsApp('autocredit')" id="btnAutocredit">
-      Автокредит бойынша
-    </button>
+      <a class="topic-button dark"
+         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B0%D1%80%D0%B5%D1%81%D1%82%D0%B0%20%D1%81%D1%87%D0%B5%D1%82%D0%B0">
+        Арест счета
+      </a>
 
-    <button class="topic-button dark" onclick="openWhatsApp('schedule')" id="btnSchedule">
-      График бойынша
-    </button>
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0">
+        Автокредит
+      </a>
 
-    <button class="topic-button" onclick="openWhatsApp('fiveYearSchedule')" id="btnFiveYearSchedule">
-      5 жылға график бойынша
-    </button>
+      <a class="topic-button dark"
+         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0">
+        График
+      </a>
 
-    <button class="topic-button dark" onclick="openWhatsApp('bankruptcy')" id="btnBankruptcy">
-      Банкроттық бойынша
-    </button>
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%BD%D0%B0%205%20%D0%BB%D0%B5%D1%82">
+        График на 5 лет
+      </a>
 
-    <button class="topic-button" onclick="openWhatsApp('courtBankruptcy')" id="btnCourtBankruptcy">
-      Соттық банкроттық бойынша
-    </button>
+      <a class="topic-button dark"
+         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%81%D1%82%D0%B2%D0%B0">
+        Банкротство
+      </a>
+
+      <a class="topic-button"
+         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D1%81%D1%83%D0%B4%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%81%D1%82%D0%B2%D0%B0">
+        Судебное банкротство
+      </a>
+    </div>
 
     <div class="phone">+7 778 113 59 62</div>
 
-    <div class="small" id="smallText">
-      Тақырыпты таңдаңыз, WhatsApp ашылады
+    <div class="small">
+      Выберите нужную категорию — откроется WhatsApp
     </div>
 
   </div>
-
-  <script>
-    const phone = "77781135962";
-    let currentLanguage = "kz";
-
-    const data = {
-      kz: {
-        subtitle: "Тілді таңдаңыз",
-        topicTitle: "Қандай мәселе бойынша жазасыз?",
-        smallText: "Тақырыпты таңдаңыз, WhatsApp ашылады",
-        buttons: {
-          arrest: "Арест бойынша",
-          accountArrest: "Шот аресті бойынша",
-          autocredit: "Автокредит бойынша",
-          schedule: "График бойынша",
-          fiveYearSchedule: "5 жылға график бойынша",
-          bankruptcy: "Банкроттық бойынша",
-          courtBankruptcy: "Соттық банкроттық бойынша"
-        },
-        messages: {
-          arrest: "Сәлеметсіз бе, мен арест бойынша ақпарат алғым келеді",
-          accountArrest: "Сәлеметсіз бе, мен шот аресті бойынша ақпарат алғым келеді",
-          autocredit: "Сәлеметсіз бе, мен автокредит бойынша ақпарат алғым келеді",
-          schedule: "Сәлеметсіз бе, мен график бойынша ақпарат алғым келеді",
-          fiveYearSchedule: "Сәлеметсіз бе, мен 5 жылға график бойынша ақпарат алғым келеді",
-          bankruptcy: "Сәлеметсіз бе, мен банкроттық бойынша ақпарат алғым келеді",
-          courtBankruptcy: "Сәлеметсіз бе, мен соттық банкроттық бойынша ақпарат алғым келеді"
-        }
-      },
-
-      ru: {
-        subtitle: "Выберите язык",
-        topicTitle: "По какому вопросу вы пишете?",
-        smallText: "Выберите тему, откроется WhatsApp",
-        buttons: {
-          arrest: "Арест",
-          accountArrest: "Арест счета",
-          autocredit: "Автокредит",
-          schedule: "График",
-          fiveYearSchedule: "График на 5 лет",
-          bankruptcy: "Банкротство",
-          courtBankruptcy: "Судебное банкротство"
-        },
-        messages: {
-          arrest: "Здравствуйте, пишу по поводу арестов",
-          accountArrest: "Здравствуйте, пишу по поводу ареста счета",
-          autocredit: "Здравствуйте, пишу по поводу автокредита",
-          schedule: "Здравствуйте, пишу по поводу графика",
-          fiveYearSchedule: "Здравствуйте, пишу по поводу графика на 5 лет",
-          bankruptcy: "Здравствуйте, пишу по поводу банкротства",
-          courtBankruptcy: "Здравствуйте, пишу по поводу судебного банкротства"
-        }
-      }
-    };
-
-    function setLanguage(lang) {
-      currentLanguage = lang;
-      const selected = data[lang];
-
-      document.getElementById("subtitle").textContent = selected.subtitle;
-      document.getElementById("topicTitle").textContent = selected.topicTitle;
-      document.getElementById("smallText").textContent = selected.smallText;
-
-      document.getElementById("btnArrest").textContent = selected.buttons.arrest;
-      document.getElementById("btnAccountArrest").textContent = selected.buttons.accountArrest;
-      document.getElementById("btnAutocredit").textContent = selected.buttons.autocredit;
-      document.getElementById("btnSchedule").textContent = selected.buttons.schedule;
-      document.getElementById("btnFiveYearSchedule").textContent = selected.buttons.fiveYearSchedule;
-      document.getElementById("btnBankruptcy").textContent = selected.buttons.bankruptcy;
-      document.getElementById("btnCourtBankruptcy").textContent = selected.buttons.courtBankruptcy;
-
-      document.getElementById("kzBtn").classList.remove("active");
-      document.getElementById("ruBtn").classList.remove("active");
-
-      if (lang === "kz") {
-        document.getElementById("kzBtn").classList.add("active");
-      } else {
-        document.getElementById("ruBtn").classList.add("active");
-      }
-    }
-
-    function openWhatsApp(topic) {
-      const message = data[currentLanguage].messages[topic];
-      const encodedMessage = encodeURIComponent(message);
-      window.location.href = https://wa.me/${phone}?text=${encodedMessage};
-    }
-
-    setLanguage("kz");
-  </script>
 </body>
 </html>
