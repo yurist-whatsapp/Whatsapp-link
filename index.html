@@ -22,10 +22,11 @@
     }
 
     .title {
-      font-size: 44px;
+      font-size: 46px;
       font-weight: 800;
       color: #25D366;
       margin: 25px 0 16px;
+      line-height: 1.15;
     }
 
     .subtitle {
@@ -33,6 +34,10 @@
       font-weight: 800;
       line-height: 1.25;
       margin-bottom: 24px;
+    }
+
+    input[type="radio"] {
+      display: none;
     }
 
     .language-buttons {
@@ -52,18 +57,40 @@
       color: #25D366;
       font-size: 24px;
       font-weight: 800;
-      text-decoration: none;
+      cursor: pointer;
       display: block;
     }
 
-    .lang-button.green {
+    #lang-kz:checked ~ .language-buttons .kz-label {
       background: #25D366;
       color: white;
     }
 
+    #lang-ru:checked ~ .language-buttons .ru-label {
+      background: #25D366;
+      color: white;
+    }
+
+    #lang-kz:checked ~ .language-buttons .ru-label {
+      background: white;
+      color: #25D366;
+    }
+
+    #lang-ru:checked ~ .language-buttons .kz-label {
+      background: white;
+      color: #25D366;
+    }
+
     .section {
-      margin-top: 35px;
-      padding-top: 10px;
+      display: none;
+    }
+
+    #lang-kz:checked ~ .kz-section {
+      display: block;
+    }
+
+    #lang-ru:checked ~ .ru-section {
+      display: block;
     }
 
     .section-title {
@@ -117,12 +144,15 @@
       Тілді таңдаңыз / Выберите язык
     </div>
 
+    <input type="radio" id="lang-kz" name="language" checked>
+    <input type="radio" id="lang-ru" name="language">
+
     <div class="language-buttons">
-      <a class="lang-button green" href="#kz">Қазақша</a>
-      <a class="lang-button" href="#ru">Русский</a>
+      <label for="lang-kz" class="lang-button kz-label">Қазақша</label>
+      <label for="lang-ru" class="lang-button ru-label">Русский</label>
     </div>
 
-    <div id="kz" class="section">
+    <div class="section kz-section">
       <div class="section-title">
         Қандай мәселе бойынша жазасыз?
       </div>
@@ -133,37 +163,32 @@
       </a>
 
       <a class="topic-button dark"
-         href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D1%88%D0%BE%D1%82%20%D0%B0%D1%80%D0%B5%D1%81%D1%82%D1%96%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
-        Шот аресті бойынша
-      </a>
-
-      <a class="topic-button"
          href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
         Автокредит бойынша
       </a>
 
-      <a class="topic-button dark"
+      <a class="topic-button"
          href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
         График бойынша
       </a>
 
-      <a class="topic-button"
+      <a class="topic-button dark"
          href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%205%20%D0%B6%D1%8B%D0%BB%D2%93%D0%B0%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
         5 жылға график бойынша
       </a>
 
-      <a class="topic-button dark"
+      <a class="topic-button"
          href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%82%D1%8B%D2%9B%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
         Банкроттық бойынша
       </a>
 
-      <a class="topic-button"
+      <a class="topic-button dark"
          href="https://wa.me/77781135962?text=%D0%A1%D3%99%D0%BB%D0%B5%D0%BC%D0%B5%D1%82%D1%81%D1%96%D0%B7%20%D0%B1%D0%B5%2C%20%D0%BC%D0%B5%D0%BD%20%D1%81%D0%BE%D1%82%D1%82%D1%8B%D2%9B%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%82%D1%8B%D2%9B%20%D0%B1%D0%BE%D0%B9%D1%8B%D0%BD%D1%88%D0%B0%20%D0%B0%D2%9B%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D0%B0%D0%BB%D2%93%D1%8B%D0%BC%20%D0%BA%D0%B5%D0%BB%D0%B5%D0%B4%D1%96">
         Соттық банкроттық бойынша
       </a>
     </div>
 
-    <div id="ru" class="section">
+    <div class="section ru-section">
       <div class="section-title">
         По какому вопросу вы пишете?
       </div>
@@ -174,31 +199,26 @@
       </a>
 
       <a class="topic-button dark"
-         href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B0%D1%80%D0%B5%D1%81%D1%82%D0%B0%20%D1%81%D1%87%D0%B5%D1%82%D0%B0">
-        Арест счета
-      </a>
-
-      <a class="topic-button"
          href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B0%D0%B2%D1%82%D0%BE%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%B0">
         Автокредит
       </a>
 
-      <a class="topic-button dark"
+      <a class="topic-button"
          href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0">
         График
       </a>
 
-      <a class="topic-button"
+      <a class="topic-button dark"
          href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D0%BA%D0%B0%20%D0%BD%D0%B0%205%20%D0%BB%D0%B5%D1%82">
         График на 5 лет
       </a>
 
-      <a class="topic-button dark"
+      <a class="topic-button"
          href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%81%D1%82%D0%B2%D0%B0">
         Банкротство
       </a>
 
-      <a class="topic-button"
+      <a class="topic-button dark"
          href="https://wa.me/77781135962?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D0%BF%D0%B8%D1%88%D1%83%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D0%B2%D0%BE%D0%B4%D1%83%20%D1%81%D1%83%D0%B4%D0%B5%D0%B1%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B1%D0%B0%D0%BD%D0%BA%D1%80%D0%BE%D1%82%D1%81%D1%82%D0%B2%D0%B0">
         Судебное банкротство
       </a>
@@ -207,7 +227,7 @@
     <div class="phone">+7 778 113 59 62</div>
 
     <div class="small">
-      Выберите нужную категорию — откроется WhatsApp
+      Таңдаңыз / Выберите нужную категорию
     </div>
 
   </div>
